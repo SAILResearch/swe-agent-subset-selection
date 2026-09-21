@@ -1,0 +1,15 @@
+\begin{table}[t]
+\centering
+\caption{Empirical cost savings by subset size. For each of the six runs, we draw 10,000 random subsets of size k\% and compute each subset's share of the run's total token cost. Cost Share is the mean over the 10,000 draws, averaged across the six runs. 95\% Range is the middle 95\% of the draws (2.5th to 97.5th percentile), taken from the run with the widest spread. Savings = 100 $-$ Cost Share.}
+\label{tab:rq4-savings}
+\begin{tabular}{lrrr}
+\toprule
+Subset & Cost Share & 95\% Range & Savings \\
+\midrule
+5\% & 5.0\% & [2.1\%, 8.9\%] & 95.0\% \\
+10\% & 10.0\% & [5.7\%, 15.0\%] & 90.0\% \\
+20\% & 20.0\% & [14.0\%, 26.6\%] & 80.0\% \\
+30\% & 30.0\% & [23.0\%, 37.3\%] & 70.0\% \\
+\bottomrule
+\end{tabular}
+\end{table}

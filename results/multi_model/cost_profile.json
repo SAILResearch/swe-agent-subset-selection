@@ -1,0 +1,616 @@
+{
+  "metadata": {
+    "source": "cost_estimates.json",
+    "tokenizer": "char_ratio_4.0",
+    "max_observation_tokens": 10000,
+    "subset_percentages": [
+      5,
+      10,
+      20,
+      30
+    ],
+    "n_monte_carlo_simulations": 10000,
+    "monte_carlo_seed": 42
+  },
+  "aggregate": {
+    "num_agents": 6,
+    "num_trajectories": 3000,
+    "total_triangular_tokens": 3440932740,
+    "total_triangular_input_tokens": 3416590697,
+    "total_triangular_output_tokens": 24342043,
+    "input_share_pct": 99.3,
+    "output_share_pct": 0.7,
+    "input_output_ratio": 140.4,
+    "per_trajectory": {
+      "mean": 1146978,
+      "median": 747340,
+      "std": 1206216,
+      "min": 22466,
+      "max": 11068400,
+      "p5": 133294,
+      "p95": 3762415,
+      "cost_ratio_max_to_min": 492.7
+    }
+  },
+  "agent_profiles": {
+    "20241029_OpenHands-CodeAct-2.1-sonnet-20241022": {
+      "num_instances": 500,
+      "total_triangular_tokens": 335344388,
+      "total_triangular_input_tokens": 332741419,
+      "total_triangular_output_tokens": 2602969,
+      "total_flat_tokens": 13842026,
+      "input_output_ratio": 127.8,
+      "per_instance": {
+        "mean": 670689,
+        "median": 234547,
+        "std": 1214833,
+        "min": 22466,
+        "max": 6947467,
+        "p5": 71245,
+        "p25": 135614,
+        "p75": 489082,
+        "p95": 4142542
+      },
+      "mean_steps": 26.2
+    },
+    "20250415_openhands": {
+      "num_instances": 500,
+      "total_triangular_tokens": 369074638,
+      "total_triangular_input_tokens": 365715032,
+      "total_triangular_output_tokens": 3359606,
+      "total_flat_tokens": 15899634,
+      "input_output_ratio": 108.9,
+      "per_instance": {
+        "mean": 738149,
+        "median": 517026,
+        "std": 674238,
+        "min": 59760,
+        "max": 5265328,
+        "p5": 162617,
+        "p25": 333726,
+        "p75": 861488,
+        "p95": 2144673
+      },
+      "mean_steps": 37.2
+    },
+    "20250520_openhands_devstral_small": {
+      "num_instances": 500,
+      "total_triangular_tokens": 757557817,
+      "total_triangular_input_tokens": 753010832,
+      "total_triangular_output_tokens": 4546985,
+      "total_flat_tokens": 21825582,
+      "input_output_ratio": 165.6,
+      "per_instance": {
+        "mean": 1515116,
+        "median": 1041881,
+        "std": 1334795,
+        "min": 128076,
+        "max": 6778962,
+        "p5": 307767,
+        "p25": 576292,
+        "p75": 1893876,
+        "p95": 4577393
+      },
+      "mean_steps": 49.3
+    },
+    "20250524_openhands_claude_4_sonnet": {
+      "num_instances": 500,
+      "total_triangular_tokens": 944468106,
+      "total_triangular_input_tokens": 938089543,
+      "total_triangular_output_tokens": 6378563,
+      "total_flat_tokens": 23796537,
+      "input_output_ratio": 147.1,
+      "per_instance": {
+        "mean": 1888936,
+        "median": 1403657,
+        "std": 1573975,
+        "min": 268980,
+        "max": 11068400,
+        "p5": 489456,
+        "p25": 864889,
+        "p75": 2339758,
+        "p95": 4722207
+      },
+      "mean_steps": 69.7
+    },
+    "20250716_openhands_kimi_k2": {
+      "num_instances": 500,
+      "total_triangular_tokens": 683908513,
+      "total_triangular_input_tokens": 677949522,
+      "total_triangular_output_tokens": 5958991,
+      "total_flat_tokens": 21867779,
+      "input_output_ratio": 113.8,
+      "per_instance": {
+        "mean": 1367817,
+        "median": 1090773,
+        "std": 899803,
+        "min": 239475,
+        "max": 5644795,
+        "p5": 416656,
+        "p25": 719567,
+        "p75": 1804832,
+        "p95": 3152003
+      },
+      "mean_steps": 55.9
+    },
+    "20250807_openhands_gpt5": {
+      "num_instances": 500,
+      "total_triangular_tokens": 350579278,
+      "total_triangular_input_tokens": 349084349,
+      "total_triangular_output_tokens": 1494929,
+      "total_flat_tokens": 16773752,
+      "input_output_ratio": 233.5,
+      "per_instance": {
+        "mean": 701159,
+        "median": 514497,
+        "std": 634869,
+        "min": 45820,
+        "max": 4968735,
+        "p5": 150920,
+        "p25": 292123,
+        "p75": 866170,
+        "p95": 1874213
+      },
+      "mean_steps": 31.2
+    }
+  },
+  "savings_empirical": {
+    "description": "Empirical cost savings validated via Monte Carlo sampling. For each agent and subset size, we drew n random subsets and measured the actual cost share. Since selection methods optimize for representativeness (not cost), a k% subset consumes approximately k% of the full benchmark cost. The 95% CI quantifies the variance due to per-instance cost differences.",
+    "aggregate": {
+      "5pct": {
+        "subset_fraction": 0.05,
+        "weighted_mean_savings_pct": 95.0,
+        "weighted_mean_cost_share_pct": 5.0,
+        "full_benchmark_tokens": 3440932740,
+        "estimated_subset_tokens": 172070642,
+        "estimated_saved_tokens": 3268862098
+      },
+      "10pct": {
+        "subset_fraction": 0.1,
+        "weighted_mean_savings_pct": 89.98,
+        "weighted_mean_cost_share_pct": 10.02,
+        "full_benchmark_tokens": 3440932740,
+        "estimated_subset_tokens": 344622322,
+        "estimated_saved_tokens": 3096310418
+      },
+      "20pct": {
+        "subset_fraction": 0.2,
+        "weighted_mean_savings_pct": 79.99,
+        "weighted_mean_cost_share_pct": 20.01,
+        "full_benchmark_tokens": 3440932740,
+        "estimated_subset_tokens": 688360496,
+        "estimated_saved_tokens": 2752572244
+      },
+      "30pct": {
+        "subset_fraction": 0.3,
+        "weighted_mean_savings_pct": 70.01,
+        "weighted_mean_cost_share_pct": 29.99,
+        "full_benchmark_tokens": 3440932740,
+        "estimated_subset_tokens": 1032091604,
+        "estimated_saved_tokens": 2408841136
+      }
+    },
+    "per_agent": {
+      "20241029_OpenHands-CodeAct-2.1-sonnet-20241022": {
+        "5pct": {
+          "subset_size": 25,
+          "subset_fraction": 0.05,
+          "cost_share": {
+            "mean": 4.99,
+            "std": 1.76,
+            "ci95_low": 2.09,
+            "ci95_high": 8.9
+          },
+          "savings": {
+            "mean_pct": 95.01,
+            "std_pct": 1.76,
+            "ci95_low": 91.1,
+            "ci95_high": 97.91,
+            "mean_tokens": 318612789
+          }
+        },
+        "10pct": {
+          "subset_size": 50,
+          "subset_fraction": 0.1,
+          "cost_share": {
+            "mean": 10.02,
+            "std": 2.41,
+            "ci95_low": 5.72,
+            "ci95_high": 15.04
+          },
+          "savings": {
+            "mean_pct": 89.98,
+            "std_pct": 2.41,
+            "ci95_low": 84.96,
+            "ci95_high": 94.28,
+            "mean_tokens": 301727671
+          }
+        },
+        "20pct": {
+          "subset_size": 100,
+          "subset_fraction": 0.2,
+          "cost_share": {
+            "mean": 20.0,
+            "std": 3.26,
+            "ci95_low": 14.01,
+            "ci95_high": 26.64
+          },
+          "savings": {
+            "mean_pct": 80.0,
+            "std_pct": 3.26,
+            "ci95_low": 73.36,
+            "ci95_high": 85.99,
+            "mean_tokens": 268291356
+          }
+        },
+        "30pct": {
+          "subset_size": 150,
+          "subset_fraction": 0.3,
+          "cost_share": {
+            "mean": 30.01,
+            "std": 3.69,
+            "ci95_low": 22.99,
+            "ci95_high": 37.31
+          },
+          "savings": {
+            "mean_pct": 69.99,
+            "std_pct": 3.69,
+            "ci95_low": 62.69,
+            "ci95_high": 77.01,
+            "mean_tokens": 234710262
+          }
+        }
+      },
+      "20250415_openhands": {
+        "5pct": {
+          "subset_size": 25,
+          "subset_fraction": 0.05,
+          "cost_share": {
+            "mean": 4.99,
+            "std": 0.9,
+            "ci95_low": 3.46,
+            "ci95_high": 6.91
+          },
+          "savings": {
+            "mean_pct": 95.01,
+            "std_pct": 0.9,
+            "ci95_low": 93.09,
+            "ci95_high": 96.54,
+            "mean_tokens": 350661389
+          }
+        },
+        "10pct": {
+          "subset_size": 50,
+          "subset_fraction": 0.1,
+          "cost_share": {
+            "mean": 10.04,
+            "std": 1.24,
+            "ci95_low": 7.77,
+            "ci95_high": 12.6
+          },
+          "savings": {
+            "mean_pct": 89.96,
+            "std_pct": 1.24,
+            "ci95_low": 87.4,
+            "ci95_high": 92.23,
+            "mean_tokens": 332002656
+          }
+        },
+        "20pct": {
+          "subset_size": 100,
+          "subset_fraction": 0.2,
+          "cost_share": {
+            "mean": 20.02,
+            "std": 1.65,
+            "ci95_low": 16.95,
+            "ci95_high": 23.38
+          },
+          "savings": {
+            "mean_pct": 79.98,
+            "std_pct": 1.65,
+            "ci95_low": 76.62,
+            "ci95_high": 83.05,
+            "mean_tokens": 295200154
+          }
+        },
+        "30pct": {
+          "subset_size": 150,
+          "subset_fraction": 0.3,
+          "cost_share": {
+            "mean": 29.99,
+            "std": 1.86,
+            "ci95_low": 26.42,
+            "ci95_high": 33.7
+          },
+          "savings": {
+            "mean_pct": 70.01,
+            "std_pct": 1.86,
+            "ci95_low": 66.3,
+            "ci95_high": 73.58,
+            "mean_tokens": 258385802
+          }
+        }
+      },
+      "20250520_openhands_devstral_small": {
+        "5pct": {
+          "subset_size": 25,
+          "subset_fraction": 0.05,
+          "cost_share": {
+            "mean": 5.0,
+            "std": 0.88,
+            "ci95_low": 3.43,
+            "ci95_high": 6.81
+          },
+          "savings": {
+            "mean_pct": 95.0,
+            "std_pct": 0.88,
+            "ci95_low": 93.19,
+            "ci95_high": 96.57,
+            "mean_tokens": 719658221
+          }
+        },
+        "10pct": {
+          "subset_size": 50,
+          "subset_fraction": 0.1,
+          "cost_share": {
+            "mean": 10.02,
+            "std": 1.18,
+            "ci95_low": 7.81,
+            "ci95_high": 12.42
+          },
+          "savings": {
+            "mean_pct": 89.98,
+            "std_pct": 1.18,
+            "ci95_low": 87.58,
+            "ci95_high": 92.19,
+            "mean_tokens": 681657089
+          }
+        },
+        "20pct": {
+          "subset_size": 100,
+          "subset_fraction": 0.2,
+          "cost_share": {
+            "mean": 19.97,
+            "std": 1.56,
+            "ci95_low": 16.98,
+            "ci95_high": 23.18
+          },
+          "savings": {
+            "mean_pct": 80.03,
+            "std_pct": 1.56,
+            "ci95_low": 76.82,
+            "ci95_high": 83.02,
+            "mean_tokens": 606251555
+          }
+        },
+        "30pct": {
+          "subset_size": 150,
+          "subset_fraction": 0.3,
+          "cost_share": {
+            "mean": 29.98,
+            "std": 1.8,
+            "ci95_low": 26.55,
+            "ci95_high": 33.56
+          },
+          "savings": {
+            "mean_pct": 70.02,
+            "std_pct": 1.8,
+            "ci95_low": 66.44,
+            "ci95_high": 73.45,
+            "mean_tokens": 530443990
+          }
+        }
+      },
+      "20250524_openhands_claude_4_sonnet": {
+        "5pct": {
+          "subset_size": 25,
+          "subset_fraction": 0.05,
+          "cost_share": {
+            "mean": 5.01,
+            "std": 0.82,
+            "ci95_low": 3.59,
+            "ci95_high": 6.79
+          },
+          "savings": {
+            "mean_pct": 94.99,
+            "std_pct": 0.82,
+            "ci95_low": 93.21,
+            "ci95_high": 96.41,
+            "mean_tokens": 897128677
+          }
+        },
+        "10pct": {
+          "subset_size": 50,
+          "subset_fraction": 0.1,
+          "cost_share": {
+            "mean": 10.01,
+            "std": 1.11,
+            "ci95_low": 8.03,
+            "ci95_high": 12.3
+          },
+          "savings": {
+            "mean_pct": 89.99,
+            "std_pct": 1.11,
+            "ci95_low": 87.7,
+            "ci95_high": 91.97,
+            "mean_tokens": 849896029
+          }
+        },
+        "20pct": {
+          "subset_size": 100,
+          "subset_fraction": 0.2,
+          "cost_share": {
+            "mean": 20.02,
+            "std": 1.51,
+            "ci95_low": 17.18,
+            "ci95_high": 23.05
+          },
+          "savings": {
+            "mean_pct": 79.98,
+            "std_pct": 1.51,
+            "ci95_low": 76.95,
+            "ci95_high": 82.82,
+            "mean_tokens": 755372768
+          }
+        },
+        "30pct": {
+          "subset_size": 150,
+          "subset_fraction": 0.3,
+          "cost_share": {
+            "mean": 30.0,
+            "std": 1.68,
+            "ci95_low": 26.82,
+            "ci95_high": 33.42
+          },
+          "savings": {
+            "mean_pct": 70.0,
+            "std_pct": 1.68,
+            "ci95_low": 66.58,
+            "ci95_high": 73.18,
+            "mean_tokens": 661116569
+          }
+        }
+      },
+      "20250716_openhands_kimi_k2": {
+        "5pct": {
+          "subset_size": 25,
+          "subset_fraction": 0.05,
+          "cost_share": {
+            "mean": 5.0,
+            "std": 0.64,
+            "ci95_low": 3.82,
+            "ci95_high": 6.34
+          },
+          "savings": {
+            "mean_pct": 95.0,
+            "std_pct": 0.64,
+            "ci95_low": 93.66,
+            "ci95_high": 96.18,
+            "mean_tokens": 649716967
+          }
+        },
+        "10pct": {
+          "subset_size": 50,
+          "subset_fraction": 0.1,
+          "cost_share": {
+            "mean": 10.01,
+            "std": 0.88,
+            "ci95_low": 8.38,
+            "ci95_high": 11.82
+          },
+          "savings": {
+            "mean_pct": 89.99,
+            "std_pct": 0.88,
+            "ci95_low": 88.18,
+            "ci95_high": 91.62,
+            "mean_tokens": 615427536
+          }
+        },
+        "20pct": {
+          "subset_size": 100,
+          "subset_fraction": 0.2,
+          "cost_share": {
+            "mean": 20.01,
+            "std": 1.18,
+            "ci95_low": 17.79,
+            "ci95_high": 22.35
+          },
+          "savings": {
+            "mean_pct": 79.99,
+            "std_pct": 1.18,
+            "ci95_low": 77.65,
+            "ci95_high": 82.21,
+            "mean_tokens": 547086417
+          }
+        },
+        "30pct": {
+          "subset_size": 150,
+          "subset_fraction": 0.3,
+          "cost_share": {
+            "mean": 29.99,
+            "std": 1.35,
+            "ci95_low": 27.34,
+            "ci95_high": 32.64
+          },
+          "savings": {
+            "mean_pct": 70.01,
+            "std_pct": 1.35,
+            "ci95_low": 67.36,
+            "ci95_high": 72.66,
+            "mean_tokens": 478804900
+          }
+        }
+      },
+      "20250807_openhands_gpt5": {
+        "5pct": {
+          "subset_size": 25,
+          "subset_fraction": 0.05,
+          "cost_share": {
+            "mean": 5.0,
+            "std": 0.89,
+            "ci95_low": 3.46,
+            "ci95_high": 6.94
+          },
+          "savings": {
+            "mean_pct": 95.0,
+            "std_pct": 0.89,
+            "ci95_low": 93.06,
+            "ci95_high": 96.54,
+            "mean_tokens": 333045596
+          }
+        },
+        "10pct": {
+          "subset_size": 50,
+          "subset_fraction": 0.1,
+          "cost_share": {
+            "mean": 10.0,
+            "std": 1.21,
+            "ci95_low": 7.79,
+            "ci95_high": 12.56
+          },
+          "savings": {
+            "mean_pct": 90.0,
+            "std_pct": 1.21,
+            "ci95_low": 87.44,
+            "ci95_high": 92.21,
+            "mean_tokens": 315520395
+          }
+        },
+        "20pct": {
+          "subset_size": 100,
+          "subset_fraction": 0.2,
+          "cost_share": {
+            "mean": 20.02,
+            "std": 1.62,
+            "ci95_low": 16.98,
+            "ci95_high": 23.36
+          },
+          "savings": {
+            "mean_pct": 79.98,
+            "std_pct": 1.62,
+            "ci95_low": 76.64,
+            "ci95_high": 83.02,
+            "mean_tokens": 280389747
+          }
+        },
+        "30pct": {
+          "subset_size": 150,
+          "subset_fraction": 0.3,
+          "cost_share": {
+            "mean": 30.01,
+            "std": 1.86,
+            "ci95_low": 26.5,
+            "ci95_high": 33.78
+          },
+          "savings": {
+            "mean_pct": 69.99,
+            "std_pct": 1.86,
+            "ci95_low": 66.22,
+            "ci95_high": 73.5,
+            "mean_tokens": 245381872
+          }
+        }
+      }
+    }
+  }
+}

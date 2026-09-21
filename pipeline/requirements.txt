@@ -1,0 +1,17 @@
+# Tested with Python 3.13.7. Needed only for the pipeline stages (the research-question scripts use ../requirements.txt).
+# Imported by the pipeline code:
+numpy==2.3.5
+scipy==1.17.0
+scikit-learn==1.8.0
+hdbscan==0.8.41
+torch==2.9.1
+sentence-transformers==5.2.0
+# Not imported directly; loaded by sentence-transformers and by the embedding model's own code (embed stage only):
+transformers==4.57.5
+einops==0.8.1
+# Imported by the download tool of the SWE-bench experiments repository (fetch stage of multi_model and multi_agent only):
+boto3==1.43.98
+pyyaml==6.0.3
+# fetch stage of single_setup and group_runs.py:
+huggingface_hub==0.36.2
+pyarrow==25.0.1

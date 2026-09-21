@@ -1,0 +1,5 @@
+Family,Best Config.,MM Med,MM Delta%R,MM p,MM delta,MA Med,MA Delta%R,MA p,MA delta
+Embedding-Within-Strata (full method),Centroid Pooled [ES],0.0431,—,—,—,0.0400,—,—,—
+Pure Embedding,Medoid TS [PE],0.0634,+36.7,<0.001,+0.588 (L),0.0573,+30.5,<0.001,+0.778 (L)
+Clustering,HDBSCAN Pooled [CL],0.0526,+15.7,<0.001,+0.620 (L),0.0448,+9.0,<0.001,+0.500 (L)
+Shortlist,Centroid Pooled +Strata 1.5× [SL],0.0565,+20.8,<0.001,+0.866 (L),0.0547,+25.5,<0.001,+0.872 (L)

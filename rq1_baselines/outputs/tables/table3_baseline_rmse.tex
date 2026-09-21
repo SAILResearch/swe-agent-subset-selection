@@ -1,0 +1,40 @@
+\begin{table*}[t]
+\centering
+\caption{RQ1: Baseline RMSE across datasets and subset sizes. Med = median RMSE, P95 = 95th percentile RMSE across $N{=}1{,}000$ synthetic distributions. The strongest baseline (Consist-Strat) is bolded. MaxErr is reported separately in Table 4.}
+\label{tab:rq1-rmse}
+\begin{tabular}{llrrrrrr}
+\toprule
+Subset & Approach & \multicolumn{2}{c}{Single-Setup} & \multicolumn{2}{c}{Multi-Model} & \multicolumn{2}{c}{Multi-Agent} \\
+\cmidrule(lr){3-4} \cmidrule(lr){5-6} \cmidrule(lr){7-8}
+ &  & Med & P95 & Med & P95 & Med & P95 \\
+\midrule
+5\% & Random & 0.0744 & 0.0777 & 0.1090 & 0.1182 & 0.1048 & 0.1183 \\
+ & Diff-Strat & 0.0410 & 0.0474 & 0.0827 & 0.0954 & 0.0689 & 0.0839 \\
+ & \textbf{Consist-Strat} & 0.0367 & 0.0416 & 0.0746 & 0.0868 & 0.0633 & 0.0764 \\
+ & Repo-Strat & 0.0761 & 0.0769 & 0.1085 & 0.1183 & 0.1037 & 0.1171 \\
+ & Repo$\times$Diff & 0.0983 & 0.1038 & 0.0886 & 0.0993 & 0.0803 & 0.1023 \\
+ & Repo$\times$Consist & 0.0709 & 0.0905 & 0.0830 & 0.1050 & 0.0783 & 0.1171 \\
+\midrule
+10\% & Random & 0.0511 & 0.0534 & 0.0730 & 0.0792 & 0.0720 & 0.0807 \\
+ & Diff-Strat & 0.0283 & 0.0332 & 0.0556 & 0.0640 & 0.0470 & 0.0562 \\
+ & \textbf{Consist-Strat} & 0.0250 & 0.0287 & 0.0498 & 0.0576 & 0.0422 & 0.0507 \\
+ & Repo-Strat & 0.0470 & 0.0480 & 0.0723 & 0.0788 & 0.0706 & 0.0794 \\
+ & Repo$\times$Diff & 0.0378 & 0.0497 & 0.0564 & 0.0661 & 0.0485 & 0.0570 \\
+ & Repo$\times$Consist & 0.0340 & 0.0409 & 0.0526 & 0.0715 & 0.0443 & 0.0556 \\
+\midrule
+20\% & Random & 0.0342 & 0.0356 & 0.0487 & 0.0527 & 0.0474 & 0.0532 \\
+ & Diff-Strat & 0.0189 & 0.0221 & 0.0369 & 0.0426 & 0.0309 & 0.0372 \\
+ & \textbf{Consist-Strat} & 0.0167 & 0.0191 & 0.0331 & 0.0385 & 0.0275 & 0.0335 \\
+ & Repo-Strat & 0.0315 & 0.0324 & 0.0481 & 0.0525 & 0.0465 & 0.0527 \\
+ & Repo$\times$Diff & 0.0169 & 0.0198 & 0.0377 & 0.0431 & 0.0314 & 0.0377 \\
+ & Repo$\times$Consist & 0.0538 & 0.0632 & 0.0342 & 0.0400 & 0.0291 & 0.0349 \\
+\midrule
+30\% & Random & 0.0260 & 0.0273 & 0.0371 & 0.0403 & 0.0361 & 0.0405 \\
+ & Diff-Strat & 0.0145 & 0.0167 & 0.0281 & 0.0327 & 0.0236 & 0.0283 \\
+ & \textbf{Consist-Strat} & 0.0128 & 0.0147 & 0.0253 & 0.0293 & 0.0208 & 0.0253 \\
+ & Repo-Strat & 0.0305 & 0.0317 & 0.0368 & 0.0401 & 0.0355 & 0.0401 \\
+ & Repo$\times$Diff & 0.0219 & 0.0234 & 0.0286 & 0.0329 & 0.0238 & 0.0286 \\
+ & Repo$\times$Consist & 0.0385 & 0.0450 & 0.0259 & 0.0300 & 0.0217 & 0.0262 \\
+\bottomrule
+\end{tabular}
+\end{table*}

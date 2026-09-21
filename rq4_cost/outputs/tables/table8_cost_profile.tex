@@ -1,0 +1,18 @@
+\begin{table}[t]
+\centering
+\caption{Per-run cost profile across 500 SWE-Bench Verified instances. All runs use the OpenHands framework with different models. Token counts reflect cumulative cost (input re-transmission at every turn). Total (M) = total \#tokens in millions across all 500 instances. Mean (M) = mean \#tokens per instance in millions. Steps = mean number of agent steps per instance. I/O Ratio = ratio of \#input tokens to \#output tokens.}
+\label{tab:rq4-profile}
+\begin{tabular}{lrrrr}
+\toprule
+OpenHands Run & Total (M) & Mean (M) & Steps & I/O Ratio \\
+\midrule
+Sonnet 3.5 (Oct '24) & 335 & 0.67 & 26.2 & 128$\times$ \\
+Sonnet 3.7 (Apr '25) & 369 & 0.74 & 37.2 & 109$\times$ \\
+Devstral (May '25) & 758 & 1.52 & 49.3 & 166$\times$ \\
+Sonnet 4 (May '25) & 944 & 1.89 & 69.7 & 147$\times$ \\
+Kimi K2 (Jul '25) & 684 & 1.37 & 55.9 & 114$\times$ \\
+GPT-5 (Aug '25) & 351 & 0.70 & 31.2 & 234$\times$ \\
+Aggregate & 3,441 & 1.15 & 44.9 & 140$\times$ \\
+\bottomrule
+\end{tabular}
+\end{table}

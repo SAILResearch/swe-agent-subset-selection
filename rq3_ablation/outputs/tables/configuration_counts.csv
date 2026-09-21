@@ -1,0 +1,8 @@
+Family,Paper n,multi_model,multi_agent
+Uniform Random,1,1,1
+Stratified sampling,5,5,5
+Embedding + strata,10,10,10
+Pure embedding,20,20,20
+Clustering,16,16,16
+Shortlist,24,24,24
+"Stability-Stratified (control, not counted)",-,1,1

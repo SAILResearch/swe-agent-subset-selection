@@ -1,0 +1,30 @@
+Paper location,Statement,Value in the paper,Reproduced value,How it is computed
+Section 5.1,"Runs R, Single-setup (the 10-run group)",10,10.0000,largest stored window size + 1
+Section 5.1,"Runs R, Multi-model",6,6.0000,largest stored window size + 1
+Section 5.1,"Runs R, Multi-agent",7,7.0000,largest stored window size + 1
+Section 5.1,Multi-model trajectories (6 x 500),3000,3000.0000,cost_profile.json aggregate.num_trajectories
+Section 5.2.1,Synthetic distributions,1000,1000.0000,synthetic_distributions.json
+Section 5.2.1,Each distribution contains N = 250 instances,250,sizes: [250],len(instances)
+Section 5.2.1,"Nine difficulty levels (10%..90%), approximately 111 distributions per level",9 x ~111,"{10: 112, 20: 111, 30: 111, 40: 111, 50: 111, 60: 111, 70: 111, 80: 111, 90: 111}",resolve_rate per distribution
+Section 5.2.1,Source run resolve rate (%),53,53.0000,cross_run_resolve_rates.json pool_stats
+Section 5.2.1,Instances failing on the source run,235,235.0000,total - resolved
+Section 5.2.1,A 10% distribution takes this many failing instances,225,225.0000,250 * (1 - 0.10)
+Section 5.2.1,Mean pairwise Jaccard similarity,0.35,0.3463,"all C(1000,2) pairs"
+Section 5.2.1,Design floor of the mean Jaccard similarity (approximately),0.33,0.3333,125 / (250 + 250 - 125)
+Section 5.2.1,Mean similarity within the middle difficulty levels (40% to 60%),0.33-0.36,0.3351-0.3646,"pairs within the same level, levels 40/50/60"
+Section 5.2.1,A lowest-level distribution (10% on the source run) resolves under Sonnet 3.7 at (%),42,41.9964,mean resolve rate of the level-10 distributions on the Sonnet 3.7 run
+Section 8.4,Greedy selection of distributions with pairwise Jaccard below 0.30 retains,3,3.0000,"greedy pass in stored order, multi-model"
+Section 8.3,Spearman correlation between source-run level and each remaining run's resolve rate >= 0.99 (multi-model),>=0.99,"0.9929, 0.9926, 0.9929, 0.9933, 0.9922","difficulty_level_validity_per_distribution.csv, 1,000 distributions per run"
+Section 8.3,The ordering of difficulty levels never inverts (multi-model),never,0 inversions of consecutive level means over 5 runs,level means per run
+Section 8.3,Distributions within the same level land within about 2 percentage points of each other,about 2 pp,within-level standard deviation 0.74-2.03 pp,"std of resolve rates per (run, level)"
+Section 8.3,Neighboring levels sit 5-6 percentage points apart,5-6 pp,"gap between consecutive level means: mean 5.30 pp, range 4.56-5.84 pp",differences of level means
+Section 8.3,"Instances that resolve on one run and fail on the other, averaged over run pairs (multi-model, %)",21,20.9859,mean gross_flip over all distributions and run pairs
+Section 8.3,The change is mostly in one direction (newer runs resolve what older ones failed),mostly fail-to-pass,fail-to-pass 14.6% vs pass-to-fail 6.3%,mean f2p and p2f
+Section 8.4,"Core/Edge Pooled beats Consist-Strat on this many of the nine levels, 5% (multi-model)",9,9.0000,"median paired RMSE difference per level, W>=2"
+Section 8.4,"... sign test p, Core/Edge Pooled 5%",0.004,0.00391,"two-sided binomial test, 9 of 9"
+Section 8.4,"Core/Edge Pooled beats Consist-Strat on this many of the nine levels, 10% (multi-model)",9,9.0000,"median paired RMSE difference per level, W>=2"
+Section 8.4,"... sign test p, Core/Edge Pooled 10%",0.004,0.00391,"two-sided binomial test, 9 of 9"
+Section 8.4,"Centroid Pooled beats Consist-Strat on this many of the nine levels, 5% (multi-model)",9,9.0000,"median paired RMSE difference per level, W>=2"
+Section 8.4,"... sign test p, Centroid Pooled 5%",0.004,0.00391,"two-sided binomial test, 9 of 9"
+Section 8.4,"Centroid Pooled beats Consist-Strat on this many of the nine levels, 10% (multi-model)",8,8.0000,"median paired RMSE difference per level, W>=2"
+Section 8.4,"... sign test p, Centroid Pooled 10%",0.039,0.03906,"two-sided binomial test, 8 of 9"

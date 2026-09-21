@@ -1,0 +1,98 @@
+{
+  "description": "Single-setup run groups: number of reruns per instance, number of instances, and the resolve rate (%) of each run (resolved instances / instances). The 10-run group is results/single_setup/aggregated_results.json; groups 5 to 9 are in run_group_<N>/.",
+  "run_groups": {
+    "5": {
+      "n_runs": 5,
+      "n_instances": 124,
+      "resolve_rate_pct_per_run": [
+        45.9677,
+        47.5806,
+        46.7742,
+        46.7742,
+        48.3871
+      ],
+      "resolve_rate_pct_min": 45.9677,
+      "resolve_rate_pct_max": 48.3871
+    },
+    "6": {
+      "n_runs": 6,
+      "n_instances": 321,
+      "resolve_rate_pct_per_run": [
+        49.2212,
+        50.4673,
+        49.8442,
+        50.1558,
+        49.5327,
+        52.0249
+      ],
+      "resolve_rate_pct_min": 49.2212,
+      "resolve_rate_pct_max": 52.0249
+    },
+    "7": {
+      "n_runs": 7,
+      "n_instances": 966,
+      "resolve_rate_pct_per_run": [
+        45.7557,
+        45.0311,
+        43.8923,
+        44.7205,
+        43.5818,
+        44.3064,
+        45.3416
+      ],
+      "resolve_rate_pct_min": 43.5818,
+      "resolve_rate_pct_max": 45.7557
+    },
+    "8": {
+      "n_runs": 8,
+      "n_instances": 602,
+      "resolve_rate_pct_per_run": [
+        47.8405,
+        46.6777,
+        48.505,
+        48.8372,
+        48.505,
+        47.6744,
+        48.8372,
+        47.6744
+      ],
+      "resolve_rate_pct_min": 46.6777,
+      "resolve_rate_pct_max": 48.8372
+    },
+    "9": {
+      "n_runs": 9,
+      "n_instances": 595,
+      "resolve_rate_pct_per_run": [
+        45.042,
+        45.3782,
+        45.2101,
+        45.5462,
+        44.2017,
+        44.2017,
+        44.2017,
+        46.3866,
+        45.2101
+      ],
+      "resolve_rate_pct_min": 44.2017,
+      "resolve_rate_pct_max": 46.3866
+    },
+    "10": {
+      "n_runs": 10,
+      "n_instances": 580,
+      "resolve_rate_pct_per_run": [
+        49.3103,
+        50.3448,
+        47.931,
+        49.6552,
+        49.3103,
+        50.6897,
+        48.9655,
+        51.3793,
+        48.4483,
+        49.6552
+      ],
+      "resolve_rate_pct_min": 47.931,
+      "resolve_rate_pct_max": 51.3793
+    }
+  }
+}

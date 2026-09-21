@@ -1,0 +1,9 @@
+Scenario,Subset,Mean RMSE change %,Wilcoxon p,Paired Cliff delta (positive = control better),Unpaired Cliff delta,MaxErr change % vs Diff-Strat median seed,... vs P95 seed,... vs worst seed
+multi_model,5%,-3.8,5.1e-09,+0.218,+0.154,-5.8,-43.7,-61.3
+multi_model,10%,+18.3,2.7e-39,-0.258,-0.203,+11.4,-33.2,-53.7
+multi_model,20%,+53.3,9.1e-131,-0.694,-0.543,+39.1,-15.9,-41.5
+multi_model,30%,+89.7,4.64e-159,-0.894,-0.724,+69.3,+2.1,-28.8
+multi_agent,5%,-20.5,2.94e-120,+0.806,+0.514,-20.3,-50.7,-66.5
+multi_agent,10%,-8.6,5.65e-53,+0.486,+0.234,-6.6,-41.2,-59.8
+multi_agent,20%,+18.9,1.13e-103,-0.600,-0.371,+20.7,-22.8,-46.3
+multi_agent,30%,+44.8,8.97e-162,-0.922,-0.692,+45.9,-6.7,-34.5

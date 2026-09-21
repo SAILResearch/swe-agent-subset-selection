@@ -1,0 +1,16 @@
+\begin{table*}[t]
+\centering
+\caption{RQ3 Ablation: best configuration of each ablation family compared against the full method (Centroid Pooled [ES]) at 10\% subset size. Suffixes mark the family: [ES] Embedding-Within-Strata, [PE] Pure Embedding, [CL] Clustering, [SL] Shortlist. Med = median RMSE across distributions. $\Delta$\%R = relative change in the ablation's mean RMSE against the full method (positive = the ablation has the higher error). $p$ = Holm-adjusted Wilcoxon. $\delta$ = Cliff's delta. Multi-model and Multi-agent datasets shown ($N{=}1{,}000$ distributions each).}
+\label{tab:rq3-ablation}
+\begin{tabular}{llrrrrrrrr}
+\toprule
+Family & Best Config. & \multicolumn{4}{c}{Multi-Model} & \multicolumn{4}{c}{Multi-Agent} \\
+ &  & Med & $\Delta$\%R & $p$ & $\delta$ & Med & $\Delta$\%R & $p$ & $\delta$ \\
+\midrule
+Embedding-Within-Strata (full method) & Centroid Pooled [ES] & 0.0431 & --- & --- & --- & 0.0400 & --- & --- & --- \\
+Pure Embedding & Medoid TS [PE] & 0.0634 & +36.7 & $<$0.001 & +0.588 (L) & 0.0573 & +30.5 & $<$0.001 & +0.778 (L) \\
+Clustering & HDBSCAN Pooled [CL] & 0.0526 & +15.7 & $<$0.001 & +0.620 (L) & 0.0448 & +9.0 & $<$0.001 & +0.500 (L) \\
+Shortlist & Centroid Pooled +Strata 1.5$\times$ [SL] & 0.0565 & +20.8 & $<$0.001 & +0.866 (L) & 0.0547 & +25.5 & $<$0.001 & +0.872 (L) \\
+\bottomrule
+\end{tabular}
+\end{table*}

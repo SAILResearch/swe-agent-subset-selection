@@ -1,0 +1,54 @@
+Paper location,Statement,Value in the paper,Reproduced value,How it is computed
+Fig. 7 / Approach,"Configurations in family 'Uniform Random', Multi-model",1,1.0000,all_methods group counts
+Fig. 7 / Approach,"Configurations in family 'Stratified sampling', Multi-model",5,5.0000,all_methods group counts
+Fig. 7 / Approach,"Configurations in family 'Embedding + strata', Multi-model",10,10.0000,all_methods group counts
+Fig. 7 / Approach,"Configurations in family 'Pure embedding', Multi-model",20,20.0000,all_methods group counts
+Fig. 7 / Approach,"Configurations in family 'Clustering', Multi-model",16,16.0000,all_methods group counts
+Fig. 7 / Approach,"Configurations in family 'Shortlist', Multi-model",24,24.0000,all_methods group counts
+Fig. 7 / Approach,"Total configurations, Multi-model (control method excluded)",76,76.0000,sum of the six families
+Fig. 7 / Approach,"Configurations in family 'Uniform Random', Multi-agent",1,1.0000,all_methods group counts
+Fig. 7 / Approach,"Configurations in family 'Stratified sampling', Multi-agent",5,5.0000,all_methods group counts
+Fig. 7 / Approach,"Configurations in family 'Embedding + strata', Multi-agent",10,10.0000,all_methods group counts
+Fig. 7 / Approach,"Configurations in family 'Pure embedding', Multi-agent",20,20.0000,all_methods group counts
+Fig. 7 / Approach,"Configurations in family 'Clustering', Multi-agent",16,16.0000,all_methods group counts
+Fig. 7 / Approach,"Configurations in family 'Shortlist', Multi-agent",24,24.0000,all_methods group counts
+Fig. 7 / Approach,"Total configurations, Multi-agent (control method excluded)",76,76.0000,sum of the six families
+Table 7,All printed cells,36 cells,36 of 36 cells equal the printed value,generated table compared with common/paper_values.py
+Finding 3.1,"Pure Embedding best configuration (Medoid TS [PE]): RMSE difference vs Centroid Pooled, Multi-model (%)",36.7,36.6957,100*(mean_ablation - mean_full)/mean_ablation
+Finding 3.1,"... Cliff's delta, Multi-model",0.588,0.58800,paired Cliff's delta on dist_means
+Finding 3.1,"... significant (p<0.001, Holm) with large effect, Multi-model",p<0.001; large,"Holm p=6.1e-105, L, W/T/L=(794, 0, 206)","Wilcoxon on dist_means, Holm over the three families"
+Finding 3.1,"Pure Embedding best configuration (Medoid TS +Cal [PE]): RMSE difference vs Centroid Pooled, Multi-agent (%)",30.5,30.4974,100*(mean_ablation - mean_full)/mean_ablation
+Finding 3.1,"... Cliff's delta, Multi-agent",0.778,0.77800,paired Cliff's delta on dist_means
+Finding 3.1,"... significant (p<0.001, Holm) with large effect, Multi-agent",p<0.001; large,"Holm p=8.7e-140, L, W/T/L=(889, 0, 111)","Wilcoxon on dist_means, Holm over the three families"
+Finding 3.2,"Clustering best configuration (HDBSCAN Pooled [CL]): RMSE difference vs Centroid Pooled, Multi-model (%)",15.7,15.7335,100*(mean_ablation - mean_full)/mean_ablation
+Finding 3.2,"... Cliff's delta, Multi-model",0.620,0.62000,paired Cliff's delta on dist_means
+Finding 3.2,"... significant (p<0.001, Holm) with large effect, Multi-model",p<0.001; large,"Holm p=7.2e-100, L, W/T/L=(810, 0, 190)","Wilcoxon on dist_means, Holm over the three families"
+Finding 3.2,"Clustering best configuration (HDBSCAN Pooled [CL]): RMSE difference vs Centroid Pooled, Multi-agent (%)",9.0,9.0417,100*(mean_ablation - mean_full)/mean_ablation
+Finding 3.2,"... Cliff's delta, Multi-agent",0.500,0.50000,paired Cliff's delta on dist_means
+Finding 3.2,"... significant (p<0.001, Holm) with large effect, Multi-agent",p<0.001; large,"Holm p=7e-71, L, W/T/L=(750, 0, 250)","Wilcoxon on dist_means, Holm over the three families"
+Finding 3.3,"Shortlist best configuration (Centroid Pooled +Strata 1.5× [SL]): RMSE difference vs Centroid Pooled, Multi-model (%)",20.8,20.8300,100*(mean_ablation - mean_full)/mean_ablation
+Finding 3.3,"... Cliff's delta, Multi-model",0.866,0.86600,paired Cliff's delta on dist_means
+Finding 3.3,"... significant (p<0.001, Holm) with large effect, Multi-model",p<0.001; large,"Holm p=2.4e-154, L, W/T/L=(933, 0, 67)","Wilcoxon on dist_means, Holm over the three families"
+Finding 3.3,"Shortlist best configuration (FL TS +Strata 1.5× [SL]): RMSE difference vs Centroid Pooled, Multi-agent (%)",25.5,25.5301,100*(mean_ablation - mean_full)/mean_ablation
+Finding 3.3,"... Cliff's delta, Multi-agent",0.872,0.87200,paired Cliff's delta on dist_means
+Finding 3.3,"... significant (p<0.001, Holm) with large effect, Multi-agent",p<0.001; large,"Holm p=1.9e-155, L, W/T/L=(936, 0, 64)","Wilcoxon on dist_means, Holm over the three families"
+Table 7,"Best configuration of each family (Pure Embedding, Clustering, Shortlist) per dataset",one Best Config. column,"Multi-model: Medoid TS [PE], HDBSCAN Pooled [CL], Centroid Pooled +Strata 1.5× [SL]; Multi-agent: Medoid TS +Cal [PE], HDBSCAN Pooled [CL], FL TS +Strata 1.5× [SL]",lowest median RMSE per family
+Summary box / Finding titles,Removing outcome grouping raises RMSE by (%),30-37,30.50-36.70,Table 7 values
+Summary box / Finding titles,Replacing outcome grouping with clustering raises RMSE by (%),9-16,9.04-15.73,Table 7 values
+Summary box / Finding titles,Shortlist then Random sampling raises RMSE by (%),21-26,20.83-25.53,Table 7 values
+"Finding 3.4, first test","Centroid Pooled below the middle 95% of Consist-Strat draws, Multi-model 10% (% of distributions)",20.4,20.4000,"determinism_band.json, variant w>=2_only"
+"Finding 3.4, first test","... above it, Multi-model 10%",1.9,1.9000,"determinism_band.json, variant w>=2_only"
+"Finding 3.4, first test","Centroid Pooled below the middle 95% of Consist-Strat draws, Multi-agent 10% (% of distributions)",30.7,30.7000,"determinism_band.json, variant w>=2_only"
+"Finding 3.4, first test","... above it, Multi-agent 10%",0.6,0.6000,"determinism_band.json, variant w>=2_only"
+"Finding 3.4, first test","Centroid Pooled below the middle 95% of Consist-Strat draws, Multi-model 5% (% of distributions)",18.2,18.2000,"determinism_band.json, variant w>=2_only"
+"Finding 3.4, first test","... above it, Multi-model 5%",0.3,0.3000,"determinism_band.json, variant w>=2_only"
+"Finding 3.4, first test","Centroid Pooled below the middle 95% of Consist-Strat draws, Multi-agent 5% (% of distributions)",26.7,26.7000,"determinism_band.json, variant w>=2_only"
+"Finding 3.4, first test","... above it, Multi-agent 5%",0.5,0.5000,"determinism_band.json, variant w>=2_only"
+"Finding 3.4, second test","At 5% and 10%: Stability-Stratified mean RMSE vs Diff-Strat, lowest (%)",-20.5,-20.4690,"per_distribution_mean_rmse.json, W>=2, 100*(control - DiffStrat)/DiffStrat"
+"Finding 3.4, second test",... highest (%),18.3,18.2988,"per_distribution_mean_rmse.json, W>=2, 100*(control - DiffStrat)/DiffStrat"
+"Finding 3.4, second test",At 20% and 30%: worse than the Random draw on mean RMSE by (%),19-90,18.89-89.71,"per_distribution_mean_rmse.json, W>=2, 100*(control - DiffStrat)/DiffStrat"
+"Finding 3.4, second test",... p < 0.001,p<0.001,"9.1e-131, 4.6e-159, 1.1e-103, 9e-162",Wilcoxon on W>=2 per-distribution means
+"Finding 3.4, second test",... |delta| from 0.37 to 0.72,0.37-0.72,0.3710-0.7238,"classical (unpaired) Cliff's delta, W>=2 per-distribution means"
+"Finding 3.4, second test","At 5% and 10%: worst-case error vs a typical Diff-Strat draw, lowest (%)",-20.3,-20.2948,control: per_distribution_mean_rmse.json dist_maxerr; Diff-Strat median seed: per_seed_maxerr_extract.npz; W>=2
+"Finding 3.4, second test",... highest (%),11.4,11.4288,control: per_distribution_mean_rmse.json dist_maxerr; Diff-Strat median seed: per_seed_maxerr_extract.npz; W>=2
+"Finding 3.4, second test",At 20% and 30%: worse than the typical draw on worst-case error by (%),21-69,20.72-69.34,control: per_distribution_mean_rmse.json dist_maxerr; Diff-Strat median seed: per_seed_maxerr_extract.npz; W>=2
