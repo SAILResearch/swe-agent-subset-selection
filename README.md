@@ -148,6 +148,39 @@ stage of the pipeline reads them by default.
 
 ## Citation
 
-TODO
+@misc{ayyad2026trajectoryawarebenchmarksubsetselection,
+      title={Trajectory-Aware Benchmark Subset Selection for Cost-Efficient Software Engineering Agent Regression Testing}, 
+      author={Mahmoud Ayyad and Zehao Wang and Jiho Shin and Ying Zou and Bram Adams},
+      year={2026},
+      eprint={2609.24928},
+      archivePrefix={arXiv},
+      primaryClass={cs.SE},
+      url={https://arxiv.org/abs/2609.24928}, 
+}
+
+## Acknowledgments
+
+This work uses the [SWE-rebench-OpenHands-Trajectories](https://huggingface.co/datasets/nebius/SWE-rebench-openhands-trajectories) dataset released by Nebius. We thank the authors for making these trajectories publicly available.
+
+The dataset contains OpenHands (v0.54.0) agent trajectories generated with Qwen3-Coder-480B-A35B-Instruct on tasks from the [SWE-rebench](https://huggingface.co/datasets/nebius/SWE-rebench) benchmark. It is licensed under [CC BY 4.0](https://creativecommons.org/licenses/by/4.0/). We use a filtered subset of the original data, keeping only instances rerun 5 to 10 times (3,188 instances, 25,279 trajectories).
+
+If you use this data, please cite the original authors:
+
+```bibtex
+@article{trofimova2025openhandstrajs,
+  title={OpenHands Trajectories with Qwen3-Coder-480B-A35B-Instruct},
+  author={Trofimova, Maria and Shevtsov, Anton and Badertdinov, Ibragim and Pyaev, Konstantin and Karasik, Simon and Golubev, Alexander},
+  year={2025},
+  journal={Nebius blog},
+  url={https://huggingface.co/datasets/nebius/SWE-rebench-openhands-trajectories}
+}
+
+@article{badertdinov2025swerebench,
+  title={SWE-rebench: An Automated Pipeline for Task Collection and Decontaminated Evaluation of Software Engineering Agents},
+  author={Badertdinov, Ibragim and Golubev, Alexander and Nekrashevich, Maksim and Shevtsov, Anton and Karasik, Simon and Andriushchenko, Andrei and Trofimova, Maria and Litvintseva, Daria and Yangel, Boris},
+  journal={arXiv preprint arXiv:2505.20411},
+  year={2025}
+}
+```
 
 
